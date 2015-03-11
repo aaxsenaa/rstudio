@@ -102,7 +102,7 @@ RToolsInfo::RToolsInfo(const std::string& name, const FilePath& installPath)
    else if (name == "3.2")
    {
       versionMin = "3.1.0";
-      versionMax = "3.2.99";
+      versionMax = "3.1.99";
       relativePathEntries.push_back("bin");
       relativePathEntries.push_back("gcc-4.6.3/bin");
    }
@@ -110,8 +110,9 @@ RToolsInfo::RToolsInfo(const std::string& name, const FilePath& installPath)
    {
       versionMin = "3.2.0";
       versionMax = "3.3.99";
+      relativePathEntries.push_back("bin");
 
-      // get the install path into the correct format
+      // set RTOOLS environment variable
       std::string rtoolsPath = installPath_.absolutePath();
       boost::algorithm::replace_all(rtoolsPath, "\\", "/");
       if (!boost::algorithm::ends_with(rtoolsPath, "/"))
